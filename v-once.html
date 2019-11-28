@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>v-once</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    </head>
+    <body>
+        <div id="app">
+            {{message}}
+            <span v-once>{{message}}</span>
+
+            You can also perform one-time interpolations that do not update on
+            data change by using the v-once directive
+        </div>
+        <div id="app1">
+            <p>{{rawHtml}}werwe</p>
+            <p>Using v-html directive: <span v-html="rawHtml"></span>rewrw</p>
+        </div>
+    </body>
+    <script>
+	var app=new Vue({
+	el: '#app',
+	data: {
+	message:'hi'
+	}
+    });
+    var app1=new Vue({
+	el: '#app1',
+	data: {
+	rawHtml:'<span style="color:red">'
+	}
+	});
+	</script>
+</html>

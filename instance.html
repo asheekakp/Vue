@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Instance</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p>{{ foo }}</p>
+            <!-- this will no longer update `foo`! -->
+            <button v-on:click="foo= 'baz'">Change it</button>
+        </div>
+    </body>
+    <script>
+        var data={a:2}
+        var vm = new Vue({
+        data: data
+        });
+        
+        vm.a = 1;
+        console.log(data.a);
+        console.log(vm.a);
+        console.log(data.a==vm.a);
+        var obj = {
+            foo: 'bar'
+            }
+
+            new Vue({
+            el: '#app',
+            data: obj
+            })
+	</script>
+</html>

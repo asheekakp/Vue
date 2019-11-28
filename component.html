@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+        <title>component</title>
+    </head>
+    <body>
+        <div id="app">
+            <ol>
+                <list v-for="item in grocery"
+                    v-bind:unit="item"
+                    v-bind:key="item.id"></list>
+            </ol>
+        </div>
+    </body>
+    <script>    
+    Vue.component('list',{
+        props:['unit'],
+        template:'<li>{{unit.text}}<list>'
+    })
+	var app=new Vue({
+	el: '#app',
+	data: {
+    grocery:[
+            {id : 0, text : "Dates"},
+            {id : 1, text : "Cashewnut"},
+            {id : 2, text : "Almond"}
+            ]
+    	}
+	});
+	</script>
+</html>
